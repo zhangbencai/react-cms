@@ -1,0 +1,13 @@
+.good-table{
+  padding: 20px 0;
+}
+.row-img{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.btn{
+  &>button{
+    margin-left: 5px;
+  }
+}

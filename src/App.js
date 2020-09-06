@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './assets/css/app.scss';
+import {Layout,Login} from '@/components'
+//引用antd的样式
+import 'antd/dist/antd.css'
+//引用route
+import { HashRouter } from 'react-router-dom'
+//引用redux
+import {Provider} from 'react-redux'
+import store from '@/store'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props){
+    super(props)
+    this.state={
+      token:localStorage.getItem('token')
+    }
+  }
+  onLogin(){
+    this.setState({
+      token:localStorage.getItem('token')
+    })
+  }
+  render(){
+    let {token} = this.state
+    return (
+      <HashRouter>
+        <Provider store={store}>
+          {
+            token ? <Layout /> : <Login onLogin={this.onLogin.bind(this)}/>
+          }
+        </Provider>
+      </HashRouter>
+    )
+  }
 }
+
 
 export default App;

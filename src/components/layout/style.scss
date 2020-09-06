@@ -1,0 +1,46 @@
+.my-layout{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  .my-sider{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right: 0;
+    width: 170px;
+    overflow: auto;
+    .my-logo{
+      width: 170px;
+      height: 64px;
+      text-align: center;
+      line-height: 64px;
+      margin: 10px 0;
+      img{
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+  .my-header{
+    
+    h1{
+      color: red;
+    }
+  }
+  .my-content{
+    position:absolute;
+    top:64px;
+    bottom:0;
+    left:170px;
+    right:0;
+    overflow:auto;
+    min-width: 800px;
+    padding:20px
+  }
+}
+.ant-layout{
+  height: 100%;
+  min-width: 800px;
+}
